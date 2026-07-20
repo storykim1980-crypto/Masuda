@@ -89,3 +89,23 @@ button, .btn, .hamb, .navlinks .tel, .map-cta { min-height: 44px; }
 .music-player button:hover, .music-player button:focus-visible { background: var(--red); border-color: var(--red); outline: none; }
 .music-player button[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
 @media (max-width: 760px) { .music-player { right: 14px; bottom: 14px; } .music-player button { min-height: 44px; padding: 11px 13px; font-size: 10px; } }
+
+/* Keep menu names and prices aligned, including half-size options. */
+.price-grid.stacked > span {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  column-gap: 12px;
+  align-items: baseline;
+}
+.price-grid.stacked > span > b {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+.price-grid.stacked > span > em {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  margin-top: -2px;
+  font-size: 10px;
+}
