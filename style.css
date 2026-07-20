@@ -82,3 +82,10 @@ button, .btn, .hamb, .navlinks .tel, .map-cta { min-height: 44px; }
   .info-row { display: block; }
   .info-row b { display: block; margin-bottom: 3px; }
 }
+
+/* Optional store BGM — audio loads only after the visitor taps the button. */
+.music-player { position: fixed; right: 18px; bottom: 18px; z-index: 30; }
+.music-player button { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; margin: 0; padding: 12px 16px; border: 1px solid var(--gold); border-radius: 0; background: rgba(23,22,21,.94); color: #fff8ef; box-shadow: 0 6px 18px rgba(0,0,0,.22); font: 600 11px Arial, 'Noto Sans JP', sans-serif; letter-spacing: .08em; cursor: pointer; }
+.music-player button:hover, .music-player button:focus-visible { background: var(--red); border-color: var(--red); outline: none; }
+.music-player button[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+@media (max-width: 760px) { .music-player { right: 14px; bottom: 14px; } .music-player button { min-height: 44px; padding: 11px 13px; font-size: 10px; } }
