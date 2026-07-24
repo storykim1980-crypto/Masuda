@@ -468,3 +468,21 @@ footer .legal{opacity:.7}
 .hero-broadcast b{display:block;font-family:var(--serif);font-size:11px;font-weight:600;letter-spacing:.06em;line-height:1.25}.hero-broadcast small{display:block;margin-top:3px;color:#e3c89e;font-size:8px;letter-spacing:.1em;line-height:1.25}.hero-broadcast i{margin-left:4px;color:var(--gold-soft);font-style:normal;font-size:14px}
 .hero-craftmarks{display:flex;flex-wrap:wrap;gap:0;margin:-8px 0 27px;color:#e8dccb;font-size:9px;font-weight:600;letter-spacing:.13em}.hero-craftmarks span{padding:0 11px;border-left:1px solid rgba(232,202,153,.65)}.hero-craftmarks span:first-child{padding-left:0;border-left:0}
 @media(max-width:760px){.hero-broadcast{margin-bottom:17px}.hero-broadcast b{font-size:10px}.hero-broadcast small{font-size:7px;letter-spacing:.06em}.hero-craftmarks{margin-bottom:22px;font-size:8px}.hero-craftmarks span{padding:0 8px}}
+
+/* ---- Hero v2: quiet, editorial Japanese restaurant introduction ----- */
+.hero{min-height:clamp(620px,90vh,810px);align-items:stretch;background:#17120e}
+.hero-bg::after{background:linear-gradient(180deg,rgba(15,11,8,.50) 0%,rgba(15,11,8,.10) 34%,rgba(15,11,8,.22) 60%,rgba(15,11,8,.83) 100%),linear-gradient(90deg,rgba(15,11,8,.64) 0%,rgba(15,11,8,.14) 57%,rgba(15,11,8,.04) 100%)}
+.hero-glow{left:-13%;bottom:-25%;width:56%;height:58%;opacity:.55}
+.hero-stage{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;width:100%;padding-top:126px;padding-bottom:74px}
+.hero-inner,.hero-vert,.hero-copy,.hero-cta{all:unset}
+.hero-minimal{max-width:520px;color:#fff9f0}
+.hero-overline{margin:0 0 18px;color:#e3c28d;font-size:9px;font-weight:600;letter-spacing:.22em}
+.hero-minimal h1{margin:0;color:#fff9f0;font-family:var(--serif);font-size:clamp(58px,8vw,106px);font-weight:500;line-height:.79;letter-spacing:-.08em}
+.hero-minimal h1 em{font-style:normal;color:#fff9f0}
+.hero-tagline{margin:28px 0 0;color:#e9dfd1;font-family:var(--serif);font-size:clamp(18px,2.1vw,26px);font-weight:400;line-height:1.55;letter-spacing:.08em}
+.hero-actions{display:flex;align-items:center;gap:22px;margin-top:30px}
+.hero-reserve{display:inline-flex;align-items:center;gap:24px;padding:14px 16px;border:1px solid #d6aa62;background:#d6aa62;color:#21170f;font-size:10px;font-weight:700;letter-spacing:.13em;text-decoration:none;transition:background .2s ease,border-color .2s ease}.hero-reserve:hover{background:#f1cf91;border-color:#f1cf91}.hero-reserve span{font-size:15px;line-height:0}
+.hero-menu-link{color:#f8eee0;font-size:10px;letter-spacing:.15em;text-decoration:none;border-bottom:1px solid rgba(248,238,224,.7);padding-bottom:4px}.hero-menu-link:hover{color:#e4b56e}
+.hero-media-note{display:flex;align-items:center;gap:12px;margin-top:34px;color:#e9ded0;font-size:9px;letter-spacing:.1em;text-decoration:none;opacity:.88}.hero-media-note:hover{color:#e4b56e}.hero-media-kicker{color:#e4b56e;font-size:8px;font-weight:700;letter-spacing:.18em;padding-right:12px;border-right:1px solid rgba(228,181,110,.55)}.hero-media-note b{font-size:13px;font-weight:400}
+.hero .hero-meta{position:absolute;z-index:2;right:clamp(18px,5vw,44px);bottom:20px;display:flex;gap:18px;color:rgba(247,235,220,.72);font-size:8px;letter-spacing:.13em}.hero .hero-meta span{padding-left:10px;border-left:1px solid rgba(228,181,110,.65)}
+@media(max-width:760px){.hero{min-height:680px}.hero-bg::after{background:linear-gradient(180deg,rgba(15,11,8,.4),rgba(15,11,8,.1) 35%,rgba(15,11,8,.8) 100%)}.hero-stage{padding-top:118px;padding-bottom:106px}.hero-minimal h1{font-size:clamp(56px,18vw,78px);line-height:.8}.hero-tagline{margin-top:24px;font-size:19px}.hero-actions{margin-top:27px}.hero-media-note{margin-top:28px;gap:9px;font-size:8px;line-height:1.45}.hero-media-kicker{font-size:7px;padding-right:8px}.hero .hero-meta{right:auto;left:18px;bottom:22px;gap:9px;font-size:7px}.hero .hero-meta span{padding-left:7px}}
