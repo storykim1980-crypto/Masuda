@@ -536,3 +536,12 @@ footer .legal{opacity:.7}
 /* Media ledger: two verified headline appearances plus a discreet general mention. */
 .media-ledger{grid-template-columns:190px minmax(0,1fr) auto}.media-ledger-items{grid-template-columns:repeat(2,minmax(0,1fr))}.media-other{align-self:center;margin:0;padding:0 0 0 20px;color:#b8a695;font-size:8px;letter-spacing:.09em;line-height:1.7;white-space:nowrap;border-left:1px solid rgba(231,194,137,.25)}
 @media(max-width:760px){.media-ledger{display:block}.media-other{display:block;margin:13px 0 0;padding:0;border:0;font-size:8px;white-space:normal}.media-ledger-items{grid-template-columns:1fr}}
+/* Hero type alignment: a shared left edge and intentional desktop/mobile title breaks. */
+.hero-minimal{display:flex;flex-direction:column;align-items:flex-start}
+.hero-overline{display:flex;align-items:center;gap:13px;width:auto;min-height:16px;white-space:nowrap;letter-spacing:.16em}
+.hero-overline .overline-divider{color:rgba(227,194,141,.7);letter-spacing:0}.hero-overline .overline-est{letter-spacing:.16em}
+.hero-minimal h1{display:flex;align-items:baseline;gap:.16em;width:100%;margin:0!important;white-space:nowrap;text-align:left;line-height:.88!important;letter-spacing:-.065em!important}
+.hero-minimal h1 br{display:none}.hero-minimal h1 em{display:inline-block}
+.hero-tagline{width:100%;text-align:left}.hero-actions{width:100%;justify-content:flex-start}
+@media(max-width:760px){.hero-overline{gap:8px;font-size:8px!important;letter-spacing:.11em}.hero-overline .overline-est{letter-spacing:.11em}.hero-minimal h1{display:block;font-size:clamp(54px,16vw,70px)!important;line-height:.9!important;letter-spacing:-.055em!important;white-space:normal}.hero-minimal h1 br{display:block}.hero-minimal h1 em{display:block;margin-top:.02em}.hero-tagline{margin-top:20px!important;font-size:18px!important;line-height:1.6!important}.hero-actions{margin-top:25px!important}}
+@media(min-width:761px){.hero-minimal h1{font-size:clamp(64px,7vw,102px)!important}.hero-tagline{margin-top:23px!important}}
