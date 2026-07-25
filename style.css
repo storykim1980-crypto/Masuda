@@ -559,3 +559,12 @@ footer .legal{opacity:.7}
   .hero-tagline{margin-top:17px!important}
   .hero-actions{margin-top:22px!important}
 }
+/* Copy-led hero composition: move the brand block upward, independent of the food crop. */
+@media(min-width:761px){
+  .hero-stage{justify-content:flex-start!important;padding-top:clamp(150px,18vh,215px)!important;padding-bottom:0!important}
+  .hero-minimal{transform:none!important}
+}
+@media(max-width:760px){
+  .hero-stage{justify-content:flex-start!important;padding-top:154px!important;padding-bottom:0!important}
+  .hero-minimal{transform:none!important}
+}
