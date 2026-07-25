@@ -530,3 +530,9 @@ footer .legal{opacity:.7}
 .interior .wall{grid-template-columns:1.15fr .85fr;grid-auto-rows:clamp(260px,31vw,400px)}
 .interior .wall .tile.feat{grid-column:auto;grid-row:auto}.interior .wall .tile{grid-column:auto;grid-row:auto}
 @media(max-width:760px){.gallery .wall,.interior .wall{grid-template-columns:1fr;grid-auto-rows:280px}.gallery .wall .tile,.interior .wall .tile{grid-column:auto;grid-row:auto}}
+/* Revised photographic direction: plated yakiton as the hero; a real charcoal grill for the craft story. */
+.hero-slide:first-child{background-position:center 58%!important;filter:brightness(.66) contrast(1.08) saturate(.88)!important}
+.craft-img img{object-position:center!important;filter:brightness(.86) contrast(1.06) saturate(.88)!important}
+/* Media ledger: two verified headline appearances plus a discreet general mention. */
+.media-ledger{grid-template-columns:190px minmax(0,1fr) auto}.media-ledger-items{grid-template-columns:repeat(2,minmax(0,1fr))}.media-other{align-self:center;margin:0;padding:0 0 0 20px;color:#b8a695;font-size:8px;letter-spacing:.09em;line-height:1.7;white-space:nowrap;border-left:1px solid rgba(231,194,137,.25)}
+@media(max-width:760px){.media-ledger{display:block}.media-other{display:block;margin:13px 0 0;padding:0;border:0;font-size:8px;white-space:normal}.media-ledger-items{grid-template-columns:1fr}}
