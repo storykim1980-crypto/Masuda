@@ -619,3 +619,8 @@ footer .legal{opacity:.7}
 .hero-bg::after{background:linear-gradient(180deg,rgba(12,9,6,.30) 0%,rgba(12,9,6,.06) 37%,rgba(12,9,6,.18) 66%,rgba(12,9,6,.65) 100%),linear-gradient(90deg,rgba(12,9,6,.48),rgba(12,9,6,.05) 68%,rgba(12,9,6,.02))!important}
 .hero-minimal h1,.hero-tagline{filter:drop-shadow(0 2px 12px rgba(0,0,0,.38))}
 @media(max-width:760px){.hero-slide{filter:brightness(.88) contrast(1.05) saturate(.96)!important}.hero-bg::after{background:linear-gradient(180deg,rgba(12,9,6,.20),rgba(12,9,6,.06) 32%,rgba(12,9,6,.25) 61%,rgba(12,9,6,.72) 100%)!important}}
+/* Keep utility details and the hero frame indicator in separate visual lanes. */
+.hero-reel{bottom:62px!important;padding:7px 9px;background:rgba(18,13,9,.42);backdrop-filter:blur(3px)}
+.hero .hero-meta{bottom:20px!important;max-width:calc(100% - 36px)}
+@media(max-width:760px){.hero-reel{bottom:64px!important;right:18px!important;padding:6px 7px}.hero .hero-meta{bottom:20px!important;left:18px!important;right:auto!important;gap:8px!important}.hero .hero-meta span{white-space:nowrap}}
+@media(max-width:760px){.hero .hero-meta{display:flex!important;flex-wrap:wrap!important;row-gap:5px!important;max-width:245px!important;line-height:1.35}.hero .hero-meta span{display:block!important}}
