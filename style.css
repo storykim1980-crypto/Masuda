@@ -607,3 +607,10 @@ footer .legal{opacity:.7}
 @keyframes heroCopyArrival{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero-minimal{animation:heroCopyArrival 1.1s cubic-bezier(.2,.72,.2,1) both}
 @media(prefers-reduced-motion:reduce){.hero-slide,.hero-minimal{animation:none!important}.hero-slide:first-child{opacity:1!important}}
+/* Impact hero: JavaScript-driven photo changes make the three-image introduction unmissable. */
+.hero-slide{animation:none!important;opacity:0!important;transform:scale(1.09)!important;transition:opacity 1.45s cubic-bezier(.4,0,.2,1),transform 9s cubic-bezier(.2,.65,.25,1)!important}
+.hero-slide.is-active{opacity:1!important;transform:scale(1)!important}
+.hero::before{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:radial-gradient(70% 85% at 82% 7%,rgba(215,143,57,.16),transparent 53%);mix-blend-mode:screen}
+.hero-stage{z-index:3!important}.hero-reel{position:absolute;z-index:3;right:clamp(18px,5vw,46px);bottom:20px;display:flex;align-items:center;gap:9px;color:#f0dfc8;font-size:9px;letter-spacing:.14em}.hero-reel span{color:#d8ad68;font-family:var(--serif);font-size:15px}.hero-reel i{display:block;width:42px;height:1px;background:#d8ad68}.hero-reel small{font-size:8px;letter-spacing:.13em;color:#d9c9b5}
+@media(max-width:760px){.hero-reel{right:18px;bottom:20px;gap:7px}.hero-reel i{width:27px}.hero-reel small{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none!important}.hero-slide:first-child{opacity:1!important;transform:none!important}.hero-reel{display:none}}

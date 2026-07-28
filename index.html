@@ -91,7 +91,7 @@
 </div>
 </div>
 <div aria-label="店舗案内" class="hero-meta"><span>月〜土 18:00–23:00</span><span>日曜・祝日 定休</span><span>荒川区町屋</span></div>
-</section>
+<div aria-hidden="true" class="hero-reel"><span id="heroFrame">01</span><i></i><small>CHARCOAL / MACHIYA</small></div></section>
 <!-- STORY --------------------------------------------------------- -->
 <section class="story" id="story">
 <div class="wrap">
@@ -467,5 +467,14 @@
   audio.addEventListener('error', function(){ setBtn(false); });
 })();
 </script>
-<script>(function(){var h=document.querySelector('.hero-bg');if(!h)return;h.classList.add('hero-order-'+Math.floor(Math.random()*3));}());</script></body>
+<script>(function(){
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+  var frame=document.getElementById('heroFrame');
+  if(!slides.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x;}return a;}
+  var order=shuffle(slides.map(function(_,i){return i;})), position=0;
+  function show(index){slides.forEach(function(slide,i){slide.classList.toggle('is-active',i===index);});if(frame)frame.textContent=String(index+1).padStart(2,'0');}
+  show(order[position]);
+  window.setInterval(function(){position++;if(position>=order.length){order=shuffle(slides.map(function(_,i){return i;}));position=0;}show(order[position]);},9000);
+}());</script></body>
 </html>
