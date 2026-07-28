@@ -78,7 +78,7 @@
 <!-- HERO ---------------------------------------------------------- -->
 <section class="hero"><div class="hero-bg">
 <div class="hero-slide" style="background-image:url('images/hero-yakiton-a.webp')"></div><div class="hero-slide" style="background-image:url('images/hero-yakiton-b.webp')"></div>
-</div><div aria-hidden="true" class="hero-glow"></div>
+<div class="hero-slide" style="background-image:url('images/hero-yakiton-c.webp')"></div></div><div aria-hidden="true" class="hero-glow"></div>
 <div class="wrap hero-stage">
 <div class="hero-minimal">
 <p class="hero-overline">MACHIYA · TOKYO<span aria-hidden="true" class="overline-divider"> / </span><span class="overline-est">EST. 1960</span></p>
@@ -467,5 +467,5 @@
   audio.addEventListener('error', function(){ setBtn(false); });
 })();
 </script>
-<script>(function(){var hero=document.querySelector('.hero-bg');if(hero&&Math.random()>=0.5)hero.classList.add('hero-order-reverse');}());</script></body>
+<script>(function(){var h=document.querySelector('.hero-bg');if(!h)return;h.classList.add('hero-order-'+Math.floor(Math.random()*3));}());</script></body>
 </html>

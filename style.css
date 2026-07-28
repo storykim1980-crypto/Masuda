@@ -584,3 +584,12 @@ footer .legal{opacity:.7}
 /* On each visit either image can lead; the pair then crossfades continuously and gently. */
 .hero-bg.hero-order-reverse .hero-slide:first-child{animation-delay:6s!important}
 .hero-bg.hero-order-reverse .hero-slide:nth-child(2){animation-delay:0s!important}
+/* Three high-detail yakiton photographs: a random lead, then a calm 18-second rotation. */
+@keyframes masudaHeroCrossfadeThree{0%,29%{opacity:1}34%,95%{opacity:0}100%{opacity:1}}
+.hero-slide{animation:masudaHeroCrossfadeThree 18s ease-in-out infinite!important;opacity:0!important}
+.hero-slide:first-child{background-image:url('images/hero-yakiton-a.webp')!important;animation-delay:0s!important}
+.hero-slide:nth-child(2){background-image:url('images/hero-yakiton-b.webp')!important;animation-delay:6s!important}
+.hero-slide:nth-child(3){background-image:url('images/hero-yakiton-c.webp')!important;animation-delay:12s!important;background-position:center 54%!important}
+.hero-bg.hero-order-1 .hero-slide:first-child{animation-delay:12s!important}.hero-bg.hero-order-1 .hero-slide:nth-child(2){animation-delay:0s!important}.hero-bg.hero-order-1 .hero-slide:nth-child(3){animation-delay:6s!important}
+.hero-bg.hero-order-2 .hero-slide:first-child{animation-delay:6s!important}.hero-bg.hero-order-2 .hero-slide:nth-child(2){animation-delay:12s!important}.hero-bg.hero-order-2 .hero-slide:nth-child(3){animation-delay:0s!important}
+@media(max-width:760px){.hero-slide:nth-child(3){background-position:center 55%!important}}
