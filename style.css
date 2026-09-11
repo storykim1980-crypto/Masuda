@@ -638,3 +638,27 @@ footer .legal{opacity:.7}
 /* Keep menu names intact on narrow screens; e.g. もつスープ（小） never breaks into a separate （小） line. */
 .plist.stack>span{white-space:nowrap}
 @media(max-width:420px){.menu-card .plist.stack>span{font-size:11.5px;column-gap:8px}.menu-card .plist.stack>span em{font-size:9.5px}}
+
+/* Real Google Maps access panel: the lower map uses Google's live map embed,
+   with a small place card and route strip that remain legible over the map. */
+.vmap-card{position:relative;flex:1;min-height:320px;overflow:hidden;background:#e7eee3;border:1px solid #a98c61;box-shadow:7px 7px 0 rgba(86,62,35,.12)}
+.google-map{display:block;width:100%;height:100%;min-height:320px;border:0}
+.map-place{position:absolute;z-index:2;left:15px;top:15px;display:flex;align-items:center;gap:9px;max-width:calc(100% - 30px);padding:10px 13px 10px 11px;background:rgba(255,255,255,.96);color:#2b302b;border:1px solid rgba(82,68,45,.25);box-shadow:0 2px 8px rgba(41,35,25,.22);font-size:11px}
+.map-place b{display:block;font-size:12px;font-weight:700;line-height:1.35;white-space:nowrap}
+.map-place small{display:block;color:#687066;font-size:9.5px;line-height:1.4;margin-top:2px;white-space:nowrap}
+.map-place-pin{position:relative;display:block;width:18px;height:18px;flex:0 0 18px;border-radius:50% 50% 50% 0;background:#c43b2d;box-shadow:0 2px 5px rgba(86,35,25,.35);transform:rotate(-45deg);font-size:0}
+.map-place-pin::after{content:"";position:absolute;left:6px;top:6px;width:6px;height:6px;border-radius:50%;background:#fff}
+.map-open{position:absolute;z-index:2;left:15px;bottom:15px;padding:10px 13px;background:rgba(255,255,255,.96);color:#3e5f9b;border:1px solid rgba(62,95,155,.22);box-shadow:0 2px 8px rgba(41,35,25,.18);font-size:10.5px;font-weight:600;letter-spacing:.03em}
+.map-open:hover,.map-open:focus-visible{background:#fff;color:#29477b;transform:translateY(-1px)}
+.route{min-height:66px;padding:11px 16px!important;background:#5c452f!important;color:#eedfc8!important;border:1px solid #9a774b;box-shadow:4px 4px 0 rgba(86,62,35,.1)}
+.route span{flex:1;text-align:center}
+.route b{display:block;color:#fff7ea!important;font-size:11px;line-height:1.35}
+.route small{display:block;color:#eadbc5!important;font-size:9px;line-height:1.35;margin-top:2px;opacity:.9}
+.route i{font-style:normal;color:#d8ad68!important;font-size:17px;line-height:1}
+@media(max-width:760px){
+  .vmap-card{min-height:300px;box-shadow:4px 4px 0 rgba(86,62,35,.12)}
+  .google-map{min-height:300px}
+  .map-place{left:11px;top:11px;max-width:calc(100% - 22px);padding:9px 10px}
+  .map-open{left:11px;bottom:11px;padding:9px 10px}
+  .route{padding:10px 8px!important}
+}
