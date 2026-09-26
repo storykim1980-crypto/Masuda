@@ -676,3 +676,12 @@ footer .legal{opacity:.7}
   .craft-img img{width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important}
   .craft-cap{left:50%!important;transform:translateX(-50%)}
 }
+
+/* Horizontal craft crop selected for a compact editorial layout. */
+.craft-img{display:block!important;overflow:hidden!important}
+.craft-img img{width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;aspect-ratio:16/10!important;object-fit:cover!important;object-position:center!important;margin:0!important}
+.craft-cap{left:16px!important;transform:none!important}
+@media(max-width:760px){
+  .craft-img img{width:100%!important;height:auto!important;aspect-ratio:16/10!important;object-fit:cover!important}
+  .craft-cap{left:11px!important;transform:none!important}
+}
