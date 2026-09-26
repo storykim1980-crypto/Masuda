@@ -662,3 +662,7 @@ footer .legal{opacity:.7}
   .map-open{left:11px;bottom:11px;padding:9px 10px}
   .route{padding:10px 8px!important}
 }
+
+/* Caption the new craft photograph with the exact menu item name. */
+.craft-cap{position:absolute;z-index:2;left:16px;bottom:14px;padding:7px 11px;background:rgba(38,48,39,.78);color:#f4e8d3;font-family:var(--serif);font-size:13px;letter-spacing:.12em;line-height:1.2;border-left:2px solid #c39a5b;text-shadow:0 1px 5px rgba(0,0,0,.35)}
+@media(max-width:760px){.craft-cap{left:11px;bottom:11px;font-size:12px;padding:6px 9px}}
