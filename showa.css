@@ -1,0 +1,162 @@
+/* =====================================================================
+   SHOWA LAYER — 昭和の町屋食堂 mood
+   色は既存のパレット（sumi / ember / gold / paper / sage）だけを使い、
+   新しい色相は追加しない。ここではタイポ・装飾・レイアウトを昭和風に強化する。
+   ===================================================================== */
+
+/* ---- 0. Fonts for Showa display moments (no palette change) ------------ */
+:root{
+  --showa-display:"Dela Gothic One","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --showa-mincho:"Shippori Mincho B1","Noto Serif JP","Yu Mincho",serif;
+}
+
+/* ---- 1. Paper grain over the whole page (subtle, non-interactive) ------ */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .14  0 0 0 0 .08  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---- 2. Hero: halftone + vertical copy + Showa stamp + ticker ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(circle,rgba(224,184,120,.16) 1.1px,transparent 1.6px) 0 0/9px 9px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%,transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 55%,transparent 100%);
+}
+.showa-vert{
+  position:absolute;z-index:2;right:clamp(18px,4vw,64px);top:clamp(96px,14vh,150px);margin:0;
+  writing-mode:vertical-rl;font-family:var(--showa-mincho);font-weight:600;
+  font-size:clamp(14px,1.5vw,18px);letter-spacing:.42em;color:var(--gold-soft);
+  padding:18px 10px;border-left:1px solid rgba(224,184,120,.45);border-right:1px solid rgba(224,184,120,.45);
+}
+.showa-stamp{
+  position:absolute;z-index:3;right:clamp(18px,8vw,130px);bottom:clamp(120px,18vh,190px);
+  width:112px;height:112px;border-radius:50%;display:grid;place-items:center;align-content:center;text-align:center;
+  background:var(--paper);color:var(--ember);
+  box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px var(--ember),inset 0 0 0 7px var(--paper),inset 0 0 0 8px var(--ember),0 14px 30px -12px rgba(0,0,0,.6);
+  transform:rotate(-12deg);font-family:var(--showa-display);line-height:1.05;
+  animation:showaStampIn 1.1s var(--ease) .4s both;
+}
+.showa-stamp span{font-size:11px;letter-spacing:.2em}
+.showa-stamp b{font-size:30px;font-weight:400;letter-spacing:.02em}
+.showa-stamp small{font-size:11px;letter-spacing:.14em}
+@keyframes showaStampIn{from{opacity:0;transform:rotate(-30deg) scale(1.6)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+
+
+/* ---- 3. Noren curtain band (before menu) ------------------------------- */
+.noren-band{position:relative;height:74px;overflow:visible;background:var(--sumi);
+  border-bottom:1px solid var(--line-d)}
+.noren-band::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:62px;
+  background:repeating-linear-gradient(90deg,var(--ember) 0 58px,var(--ember-2) 58px 66px);
+  box-shadow:inset 0 -12px 0 var(--ember-2);
+}
+.noren-band::after{
+  content:"";position:absolute;left:0;right:0;top:62px;height:12px;
+  background:radial-gradient(circle at 33px 0,var(--ember) 33px,transparent 34px) 0 0/66px 12px repeat-x,
+             radial-gradient(circle at 33px 0,var(--ember-2) 33px,transparent 34px) 0 0/66px 12px repeat-x;
+  background-position:0 0,33px 0;
+}
+.noren-band .rod{position:absolute;left:0;right:0;top:0;height:8px;background:var(--gold);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.noren-band span{
+  position:absolute;z-index:2;left:50%;top:31px;transform:translate(-50%,-50%);
+  background:var(--paper);color:var(--ember);padding:9px 26px;
+  font-family:var(--showa-mincho);font-weight:700;font-size:15px;letter-spacing:.42em;
+  box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--gold);
+}
+
+/* ---- 4. Seigaiha band (footer lead-in) --------------------------------- */
+.seigaiha{
+  height:44px;background-color:var(--sumi);
+  background-image:
+    radial-gradient(circle at 50% 0,var(--sumi-3) 0 9px,var(--gold) 9px 11px,transparent 11px),
+    radial-gradient(circle at 50% 0,var(--sumi-3) 0 15px,var(--gold) 15px 17px,transparent 17px);
+  background-size:24px 22px;background-position:0 0,0 0;
+  opacity:.9;border-top:1px solid var(--gold);
+}
+
+/* ---- 5. Story photo: printed-frame + stamp ----------------------------- */
+.story-img img{border:8px solid #fbf4e7;box-shadow:0 22px 40px -22px rgba(20,10,4,.55)}
+.story-img .showa-badge{
+  position:absolute;z-index:3;left:-6px;top:-6px;width:96px;height:96px;border-radius:50%;
+  display:grid;place-items:center;align-content:center;text-align:center;
+  background:var(--ember);color:var(--paper);font-family:var(--showa-display);line-height:1.05;
+  box-shadow:0 0 0 3px var(--ember),0 0 0 5px var(--paper),0 0 0 6px var(--ember),0 12px 24px -10px rgba(0,0,0,.5);
+  transform:rotate(-8deg);
+}
+.showa-badge span{font-size:10px;letter-spacing:.18em}
+.showa-badge b{font-size:24px;font-weight:400}
+
+/* ---- 6. Menu board ------------------------------------------------------ */
+.menu-card{position:relative;background:#fbf4e7;border-top:3px solid var(--ember);
+  box-shadow:0 18px 36px -26px rgba(20,10,4,.55)}
+.menu-card::before{
+  content:"";position:absolute;inset:7px;pointer-events:none;border:1px solid rgba(195,154,91,.45);
+}
+.menu-card > *{position:relative}
+.menu-card h3{font-family:var(--showa-mincho);font-weight:700;letter-spacing:.04em}
+.menu-card h3 small{font-family:var(--showa-display);letter-spacing:.16em;font-size:10px}
+.menu-card .sub{position:relative;padding-bottom:6px;border-bottom:1px dotted rgba(138,122,104,.6)}
+.menu-cols{gap:18px}
+
+/* ---- 7. Section headlines: Showa poster weight -------------------------- */
+.sec-head h2{font-family:var(--showa-mincho);font-weight:700;letter-spacing:-.02em;
+  text-shadow:3px 3px 0 rgba(184,58,36,.14)}
+.on-dark .sec-head h2,.dark .sec-head h2{text-shadow:3px 3px 0 rgba(0,0,0,.35)}
+.eyebrow{font-family:var(--showa-display);font-weight:400;letter-spacing:.22em}
+
+/* ---- 8. Gallery: printed photo prints, 2 tiles fill the row ------------- */
+.gallery .wall{grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,34px);grid-auto-rows:clamp(300px,36vw,460px)}
+.gallery .wall .tile{padding:12px 12px 44px;background:#fbf4e7;overflow:visible;
+  box-shadow:0 22px 40px -24px rgba(20,10,4,.6);transition:transform .5s var(--ease)}
+.gallery .wall .tile:nth-child(2n){transform:rotate(.5deg)}
+.gallery .wall .tile:nth-child(2n+1){transform:rotate(-.5deg)}
+.gallery .wall .tile:hover{transform:rotate(0) translateY(-4px)}
+.gallery .wall .tile img{width:100%;height:100%;object-fit:cover}
+.gallery .wall .tile .idx{left:50%;bottom:10px;transform:translateX(-50%);
+  width:calc(100% - 24px);text-align:left;color:#6e5737;font-family:var(--showa-mincho);font-weight:700}
+.gallery .wall .tile::after,.gallery .wall .tile::before{display:none}
+
+/* ---- 9. Info: ledger cards with double-rule frames ---------------------- */
+.info-row{position:relative;box-shadow:inset 0 0 0 1px rgba(217,202,178,.9);border-left:3px solid var(--ember)}
+.info-row::before{content:"";position:absolute;inset:5px;border:1px solid rgba(195,154,91,.25);pointer-events:none}
+.info-row b{font-family:var(--showa-display);font-weight:400;letter-spacing:.2em}
+
+/* ---- 10. Showa ornaments in headers / brand ----------------------------- */
+.brand .mark{box-shadow:0 0 0 3px var(--sumi),0 0 0 4px var(--gold)}
+.navlinks a{position:relative}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.navlinks a:hover::after{transform:scaleX(1)}
+
+/* ---- 11. Responsive ----------------------------------------------------- */
+@media(max-width:1024px){
+  .showa-vert{display:none}
+  .showa-stamp{width:96px;height:96px}
+  .showa-stamp b{font-size:26px}
+}
+@media(max-width:760px){
+  .showa-stamp{right:14px;bottom:auto;top:auto;bottom:126px;width:84px;height:84px}
+  .showa-stamp b{font-size:22px}
+  .showa-stamp span,.showa-stamp small{font-size:9px}
+  .gallery .wall{grid-template-columns:1fr;grid-auto-rows:auto}
+  .gallery .wall .tile{height:300px}
+  .story-img .showa-badge{width:76px;height:76px}
+  .showa-badge b{font-size:19px}
+  .menu-cols{gap:12px}
+  .noren-band{height:64px}
+  .noren-band::before{height:54px}
+  .noren-band::after{top:54px}
+  .noren-band span{top:27px;font-size:13px;padding:7px 18px}
+}
+
+/* ---- 12. Reduced motion ------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .showa-stamp{animation:none}
+  .gallery .wall .tile{transform:none!important}
+}
+
+/* ---- 13. Review fix: small labels stay legible ------------------------- */
+.info-row b{font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.16em}
+.menu-card h3 small{font-size:11px;letter-spacing:.1em}
